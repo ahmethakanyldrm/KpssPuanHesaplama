@@ -15,14 +15,16 @@ struct RootView: View {
             MainView()
                 .tabItem {
                     Label("Ana Sayfa", systemImage: "house")
+                        .environment(\.symbolVariants, selectionItem == 0 ? .fill : .none)
                 }.tag(0)
             
             ResultView()
                 .tabItem {
                     Label("Sonuçlar", systemImage: "arrow.counterclockwise.circle")
-                       
+                        .environment(\.symbolVariants, selectionItem == 1 ? .fill : .none)
                 } .tag(1)
         }
+        .tint(.orange)
     }
 }
 
