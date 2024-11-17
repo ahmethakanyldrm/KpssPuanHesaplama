@@ -18,6 +18,7 @@
 		1C8220252CEA71F700B6D873 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8220242CEA71F700B6D873 /* LicenseView.swift */; };
 		1C8220272CEA722000B6D873 /* OABTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8220262CEA722000B6D873 /* OABTView.swift */; };
 		1C8220292CEA737A00B6D873 /* EducationalSciencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8220282CEA737A00B6D873 /* EducationalSciencesView.swift */; };
+		1C82202C2CEA7ADA00B6D873 /* CalculateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82202B2CEA7ADA00B6D873 /* CalculateButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		1C8220242CEA71F700B6D873 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
 		1C8220262CEA722000B6D873 /* OABTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OABTView.swift; sourceTree = "<group>"; };
 		1C8220282CEA737A00B6D873 /* EducationalSciencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationalSciencesView.swift; sourceTree = "<group>"; };
+		1C82202B2CEA7ADA00B6D873 /* CalculateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		1C8220182CEA5C7800B6D873 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1C82202A2CEA7AB000B6D873 /* Core */,
 				1C82201E2CEA5D0100B6D873 /* RootView.swift */,
 				1C82201A2CEA5CDB00B6D873 /* MainView.swift */,
 				1C82201C2CEA5CED00B6D873 /* ResultView.swift */,
@@ -102,6 +105,14 @@
 				1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1C82202A2CEA7AB000B6D873 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1C82202B2CEA7ADA00B6D873 /* CalculateButton.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				1C8220252CEA71F700B6D873 /* LicenseView.swift in Sources */,
 				1C82201D2CEA5CED00B6D873 /* ResultView.swift in Sources */,
 				1C82201B2CEA5CDB00B6D873 /* MainView.swift in Sources */,
+				1C82202C2CEA7ADA00B6D873 /* CalculateButton.swift in Sources */,
 				1C8220092CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
