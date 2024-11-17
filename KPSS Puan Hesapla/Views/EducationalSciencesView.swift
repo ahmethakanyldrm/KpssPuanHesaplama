@@ -86,7 +86,7 @@ struct EducationalSciencesView: View {
                         Text("2023 P3(Memur) Puanı: \(result2023, specifier: "%.3f")")
                             .bold()
                         
-                        Text("2023 P310(Öğretmen) Puanı: \(resultEB2023, specifier: "%.3f")")
+                        Text("2023 P10(Öğretmen) Puanı: \(resultEB2023, specifier: "%.3f")")
                             .bold()
                     }
                     
@@ -94,7 +94,7 @@ struct EducationalSciencesView: View {
                         Text("2022 P3(Memur) Puanı: \(result2022, specifier: "%.3f")")
                             .bold()
                         
-                        Text("2022 P310(Öğretmen) Puanı: \(resultEB2022, specifier: "%.3f")")
+                        Text("2022 P10(Öğretmen) Puanı: \(resultEB2022, specifier: "%.3f")")
                             .bold()
                     }
                     
