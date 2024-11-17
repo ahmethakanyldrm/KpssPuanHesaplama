@@ -11,7 +11,7 @@ import SwiftUI
 struct KPSS_Puan_HesaplaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }

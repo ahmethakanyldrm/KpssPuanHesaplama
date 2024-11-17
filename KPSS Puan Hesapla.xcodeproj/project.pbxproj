@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		1C8220092CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */; };
-		1C82200B2CEA51C200B6D873 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82200A2CEA51C200B6D873 /* ContentView.swift */; };
 		1C82200D2CEA51C300B6D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82200C2CEA51C300B6D873 /* Assets.xcassets */; };
 		1C8220102CEA51C300B6D873 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82200F2CEA51C300B6D873 /* Preview Assets.xcassets */; };
+		1C82201B2CEA5CDB00B6D873 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82201A2CEA5CDB00B6D873 /* MainView.swift */; };
+		1C82201D2CEA5CED00B6D873 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82201C2CEA5CED00B6D873 /* ResultView.swift */; };
+		1C82201F2CEA5D0100B6D873 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82201E2CEA5D0100B6D873 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C8220052CEA51C200B6D873 /* KPSS Puan Hesapla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KPSS Puan Hesapla.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPSS_Puan_HesaplaApp.swift; sourceTree = "<group>"; };
-		1C82200A2CEA51C200B6D873 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1C82200C2CEA51C300B6D873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C82200F2CEA51C300B6D873 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1C82201A2CEA5CDB00B6D873 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1C82201C2CEA5CED00B6D873 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		1C82201E2CEA5D0100B6D873 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +55,10 @@
 		1C8220072CEA51C200B6D873 /* KPSS Puan Hesapla */ = {
 			isa = PBXGroup;
 			children = (
-				1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */,
-				1C82200A2CEA51C200B6D873 /* ContentView.swift */,
-				1C82200C2CEA51C300B6D873 /* Assets.xcassets */,
 				1C82200E2CEA51C300B6D873 /* Preview Content */,
+				1C8220192CEA5C9A00B6D873 /* Resources */,
+				1C8220182CEA5C7800B6D873 /* Views */,
+				1C82200C2CEA51C300B6D873 /* Assets.xcassets */,
 			);
 			path = "KPSS Puan Hesapla";
 			sourceTree = "<group>";
@@ -65,6 +69,24 @@
 				1C82200F2CEA51C300B6D873 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1C8220182CEA5C7800B6D873 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C82201E2CEA5D0100B6D873 /* RootView.swift */,
+				1C82201A2CEA5CDB00B6D873 /* MainView.swift */,
+				1C82201C2CEA5CED00B6D873 /* ResultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C8220192CEA5C9A00B6D873 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C82200B2CEA51C200B6D873 /* ContentView.swift in Sources */,
+				1C82201F2CEA5D0100B6D873 /* RootView.swift in Sources */,
+				1C82201D2CEA5CED00B6D873 /* ResultView.swift in Sources */,
+				1C82201B2CEA5CDB00B6D873 /* MainView.swift in Sources */,
 				1C8220092CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +299,7 @@
 				DEVELOPMENT_TEAM = 54M6VWH583;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "KPSS Puan Hesapla";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +329,7 @@
 				DEVELOPMENT_TEAM = 54M6VWH583;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "KPSS Puan Hesapla";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
