@@ -16,10 +16,9 @@ struct CalculateButton: View {
             action()
             
         }, label: {
-            Text(title)
-                .bold()
-                .font(.title2)
-                .padding(10)
+            Label(title, systemImage: "plus.forwardslash.minus")
+                .font(.title)
+                .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
             
         })
@@ -29,7 +28,7 @@ struct CalculateButton: View {
 }
 
 #Preview {
-    CalculateButton(title: "", action: {
+    CalculateButton(title: "Hesapla", action: {
         print("KPSS Puan Hesaplama Uygulaması")
     })
 }
