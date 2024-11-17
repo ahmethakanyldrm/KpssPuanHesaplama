@@ -24,8 +24,10 @@ struct SecondaryEducationView: View {
                 Section {
                     Stepper("Doğru Sayısı: \(gkTrueCount, specifier: "%.0f")", value: $gkTrueCount, in: 1...60)
                         .sensoryFeedback(.selection, trigger: gkTrueCount)
+                        .bold()
                     Stepper("Yanlış Sayısı: \(gkFalseCount, specifier: "%.0f")", value: $gkFalseCount, in: 0...60)
                         .sensoryFeedback(.selection, trigger: gkFalseCount)
+                        .bold()
                     
                 } header: {
                     Text("Genel Kültür")
@@ -40,8 +42,10 @@ struct SecondaryEducationView: View {
                 Section {
                     Stepper("Doğru Sayısı: \(gyTrueCount, specifier: "%.0f")", value: $gyTrueCount, in: 1...60)
                         .sensoryFeedback(.selection, trigger: gyTrueCount)
+                        .bold()
                     Stepper("Yanlış Sayısı: \(gyFalseCount, specifier: "%.0f")", value: $gyFalseCount, in: 0...60)
                         .sensoryFeedback(.selection, trigger: gyFalseCount)
+                        .bold()
                     
                 } header: {
                     Text("Genel Yetenek")
@@ -55,6 +59,7 @@ struct SecondaryEducationView: View {
                 
                 Section {
                     Text("KPSS Puanı: \(result, specifier: "%.3f")")
+                        .bold()
                     
                     CalculateButton(title: "Hesapla") {
                         // genel kültür ve genel yetenek netlerimizi hesaplıyoruz
@@ -62,10 +67,16 @@ struct SecondaryEducationView: View {
                         let gkNet = gkTrueCount - (gkFalseCount / 4)
                         let gyNet = gyTrueCount - (gyFalseCount / 4)
                         
-                        result = 55.839 + gyNet * 0.348 + gkNet * 0.431
+                        
+                        withAnimation{
+                            result = 55.839 + gyNet * 0.348 + gkNet * 0.431
+                        }
+                            
+                        
                         
                     }
                     .disabled(formControl)
+                    .sensoryFeedback(.success, trigger: result)
                     
                     
                 } header: {
