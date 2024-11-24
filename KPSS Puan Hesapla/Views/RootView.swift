@@ -18,13 +18,13 @@ struct RootView: View {
                         .environment(\.symbolVariants, selectionItem == 0 ? .fill : .none)
                 }.tag(0)
             
-            PastCalculationsView()
+            PastCalculationsView(selectionTabItem: $selectionItem)
                 .tabItem {
                     Label("Sonuçlar", systemImage: "arrow.counterclockwise.circle")
                         .environment(\.symbolVariants, selectionItem == 1 ? .fill : .none)
                 } .tag(1)
         }
-        .tint(.orange)
+        .tint(.purple)
     }
 }
 

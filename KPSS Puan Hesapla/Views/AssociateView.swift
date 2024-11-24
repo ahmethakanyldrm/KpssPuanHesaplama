@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 // Önlisans
 struct AssociateView: View {
@@ -16,6 +18,8 @@ struct AssociateView: View {
     @State private var gyFalseCount: Double = 0
     
     @State private var result: Double = 0
+    
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         VStack {
@@ -93,9 +97,12 @@ struct AssociateView: View {
                         
                         
                         withAnimation{
-                            result = (53.816 + gyNet * 0.43 + gkNet * 0.397)
+                            result = (Constants.associateScore + gyNet * Constants.associateGYCoefficient + gkNet * Constants.associateGKCoefficient)
                             
                         }
+                        // SwiftData insert
+                        let model = Result(examName: "Önlisans KPSS", gyNet: gyNet, gkNet: gkNet, result: result)
+                        modelContext.insert(model)
                             
                         
                         

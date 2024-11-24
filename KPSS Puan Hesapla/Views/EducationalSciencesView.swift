@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 // Eğitim Bilimleri
 struct EducationalSciencesView: View {
@@ -24,6 +25,8 @@ struct EducationalSciencesView: View {
     @State private var resultEB2023: Double = 0
     
     @State private var isShowingSheet = false
+    
+    @Environment(\.modelContext) private var modelContext
 
     
     var body: some View {
@@ -119,14 +122,28 @@ struct EducationalSciencesView: View {
                         let gyNet = gyTrueCount - (gyFalseCount / 4)
                         let ebNet = ebTrueCount - (ebFalseCount / 4)
       
+                        resultEB2022 = Constants.eb2022Score + gyNet * Constants.eb2022GYCoefficient + gkNet * Constants.eb2022GKCoefficient + ebNet * Constants.eb2022Coefficient
+                        
+                        resultEB2023 = Constants.eb2023Score + gyNet * Constants.eb2023GYCoefficient + gkNet * Constants.eb2023GKCoefficient + ebNet * Constants.eb2023Coefficient
+                        
+                        result2022 = Constants.license2022Score + gyNet * Constants.license2022GYCoefficient + gkNet * Constants.license2022GKCoefficient
+                        
+                        result2023 = Constants.license2023Score + gyNet * Constants.license2023GYCoefficient + gkNet * Constants.license2023GKCoefficient
+                        
+                            //resultEB2022 = 36.812 + gyNet * 0.3985 + gkNet * 0.3512 + ebNet * 0.34714
+                           // resultEB2023 = 40.405 + gyNet * 0.3493 + gkNet * 0.3672 + ebNet * 0.37145
                             
-                            resultEB2022 = 36.812 + gyNet * 0.3985 + gkNet * 0.3512 + ebNet * 0.34714
-                            resultEB2023 = 40.405 + gyNet * 0.3493 + gkNet * 0.3672 + ebNet * 0.37145
-                            
-                            result2022 = 48.616 + gyNet * 0.4756 + gkNet * 0.4192
-                            result2023 = 51.209 + gyNet * 0.537 + gkNet * 0.418
+                          //  result2022 = 48.616 + gyNet * 0.4756 + gkNet * 0.4192
+                          //  result2023 = 51.209 + gyNet * 0.537 + gkNet * 0.418
                         
                         isShowingSheet.toggle()
+                        
+                        // SwiftData insert
+                        let model2022EB = Result(examName: "2022 Eğitim Bilimleri", gyNet: gyNet, gkNet: gkNet, ebNet: ebNet, result: resultEB2022)
+                        let model2023EB = Result(examName: "2023 Eğitim Bilimleri", gyNet: gyNet, gkNet: gkNet, ebNet: ebNet, result: resultEB2023)
+                        
+                        modelContext.insert(model2022EB)
+                        modelContext.insert(model2023EB)
                         
                     }
                     .disabled(formControl)

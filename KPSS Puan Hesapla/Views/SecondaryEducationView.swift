@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 // Ortaöğretim
 struct SecondaryEducationView: View {
+    
+    @Environment(\.modelContext) private var modelContext
+    
+    
     @State private var gkTrueCount: Double = 60
     @State private var gkFalseCount: Double = 0
     
@@ -93,8 +99,11 @@ struct SecondaryEducationView: View {
                         
                         
                         withAnimation{
-                            result = 55.839 + gyNet * 0.348 + gkNet * 0.431
+                            result = Constants.secondaryEducationScore + gyNet * Constants.secondaryEducationGYCoefficient + gkNet * Constants.secondaryEducationGKCoefficient
                         }
+                        // SwiftData insert
+                        let model = Result(examName: "Ortaöğretim KPSS", gyNet: gyNet, gkNet: gkNet, result: result)
+                        modelContext.insert(model)
                             
                         
                         

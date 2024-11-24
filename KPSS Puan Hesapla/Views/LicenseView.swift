@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 // Lisans
 struct LicenseView: View {
@@ -17,6 +19,8 @@ struct LicenseView: View {
     
     @State private var result2022: Double = 0
     @State private var result2023: Double = 0
+    
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         VStack {
@@ -96,11 +100,19 @@ struct LicenseView: View {
                         
                         
                         withAnimation{
-                            result2023 = (51.209 + gyNet * 0.537 + gkNet * 0.418)
-                            result2022 = (48.616 + gyNet * 0.4756 + gkNet * 0.4192)
+                            result2023 = (Constants.license2023Score + gyNet * Constants.license2023GYCoefficient + gkNet * Constants.license2023GKCoefficient)
+                            result2022 = (Constants.license2022Score + gyNet * Constants.license2022GYCoefficient + gkNet * Constants.license2022GKCoefficient)
                             
                         }
-                            
+                        
+                        
+                          // SwiftData insert
+                        let model2022 = Result(examName: "2022 Lisans KPSS", gyNet: gyNet, gkNet: gkNet, result: result2022)
+                        let model2023 = Result(examName: "2023 Lisans KPSS", gyNet: gyNet, gkNet: gkNet, result: result2023)
+                        
+                        modelContext.insert(model2022)
+                        modelContext.insert(model2023)
+                        
                         
                         
                     }

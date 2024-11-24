@@ -29,5 +29,6 @@ struct KPSS_Puan_HesaplaApp: App {
         WindowGroup {
             RootView()
         }
+        .modelContainer(for: Result.self)
     }
 }

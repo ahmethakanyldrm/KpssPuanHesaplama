@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 struct OABTView: View {
     @State private var gkTrueCount: Double = 30
@@ -32,6 +34,8 @@ struct OABTView: View {
     
     @State private var isShowingSheet = false
     @State private var selectedOption = 0
+    
+    @Environment(\.modelContext) private var modelContext
     
     let options = [
         (0.4334,43.805, "Beden Eğitimi"),
@@ -194,14 +198,21 @@ struct OABTView: View {
                         
                         let oabtNet = oabtTrueCount - (oabtFalseCount / 4)
                         
-                        resultEB2022 = 36.812 + gyNet * 0.3985 + gkNet * 0.3512 + ebNet * 0.34714
-                        resultEB2023 = 40.405 + gyNet * 0.3493 + gkNet * 0.3672 + ebNet * 0.37145
+                        resultEB2022 = Constants.eb2022Score + gyNet * Constants.eb2022GYCoefficient + gkNet * Constants.eb2022GKCoefficient + ebNet * Constants.eb2022Coefficient
                         
-                        resultOABT2022 = oabtScore + gyNet * 0.1720 + gkNet * 0.1515 + ebNet * 0.1498 + oabtNet * oabtCoefficient
+                        resultEB2023 = Constants.eb2023Score + gyNet * Constants.eb2023GYCoefficient + gkNet * Constants.eb2023GKCoefficient + ebNet * Constants.eb2023Coefficient
                         
-                        result2022 = 48.616 + gyNet * 0.4756 + gkNet * 0.4192
-                        result2023 = 51.209 + gyNet * 0.537 + gkNet * 0.418
+                        resultOABT2022 = oabtScore + gyNet * Constants.oabt2022GYCoefficient + gkNet * Constants.oabt2022GKCoefficient + ebNet * Constants.oabt2022EBCoefficient + oabtNet * oabtCoefficient
+                        
+                        result2022 = Constants.license2022Score + gyNet * Constants.license2022GYCoefficient + gkNet * Constants.license2022GKCoefficient
+                        
+                        result2023 = Constants.license2023Score + gyNet * Constants.license2023GYCoefficient + gkNet * Constants.license2023GKCoefficient
                         isShowingSheet.toggle()
+                        
+                        // SwiftData insert
+                        let model2022oabt = Result(examName: "2022 ÖABT", gyNet: gyNet, gkNet: gkNet, oabtNet: oabtNet,result: resultOABT2022)
+                        modelContext.insert(model2022oabt)
+                        
                         
                         
                     }
@@ -210,6 +221,8 @@ struct OABTView: View {
                     .sheet(isPresented: $isShowingSheet) {
                         ResultView(result2022: result2022, resultEB2022: resultEB2022, resultOABT2022: resultOABT2022, result2023: result2023, resultEB2023: resultEB2023, resultOABT2023: nil)
                     }
+                    
+                    
                     
                 } header: {
                     Text("ÖABT")
