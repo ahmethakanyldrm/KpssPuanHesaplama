@@ -25,9 +25,15 @@ struct RootView: View {
                         .environment(\.symbolVariants, selectionItem == 1 ? .fill : .none)
                 } .tag(1)
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: {status in
+            })
+        }
         
         .tint(.purple)
     }
+    
+        
         
 }
 

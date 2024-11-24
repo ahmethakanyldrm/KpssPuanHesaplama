@@ -30,9 +30,7 @@ struct EducationalSciencesView: View {
     
     let adCoordinator = AdCoordinator()
     
-    init() {
-        adCoordinator.loadAd()
-    }
+    @State var viewModel = CalculateViewModel()
 
     
     var body: some View {
@@ -152,7 +150,11 @@ struct EducationalSciencesView: View {
                         modelContext.insert(model2023EB)
                         
                         // Admob
-                        adCoordinator.presentAd()
+                        if viewModel.calculateCount % 3 == 0 {
+                            adCoordinator.presentAd()
+                        }
+                        
+                        viewModel.calculateCount += 1
                         
                     }
                     .disabled(formControl)

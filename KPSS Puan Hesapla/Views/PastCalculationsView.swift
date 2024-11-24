@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import Lottie
 
 struct PastCalculationsView: View {
     @Environment(\.modelContext) private var modelContext
@@ -91,11 +92,17 @@ struct PastCalculationsView: View {
                     if results.isEmpty {
                        
                         ContentUnavailableView {
-                            Label("Sonuç Bulunamadı", systemImage: "magnifyingglass")
+                            Text("Sonuç Bulunamadı")
                                 .foregroundStyle(.main)
                             
                         } description: {
-                            Text("Henüz sonuç bulanamadı. Puan hesaplamaya başlamak için lütfen Ana sayfaya gidin ...")
+                            VStack {
+                                Text("Henüz sonuç bulanamadı. Puan hesaplamaya başlamak için lütfen Ana sayfaya gidin ...")
+                                LottieView(animation: .named("notfound"))
+                                    .looping()
+                                    .frame(width: 250, height: 250)
+                                    .shadow(radius: 10)
+                            }
                         } actions: {
                             Button("KPSS Puan Hesaplaması Yap") {
                                 selectionTabItem = 0

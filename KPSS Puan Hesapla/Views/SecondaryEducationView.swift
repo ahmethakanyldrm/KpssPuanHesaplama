@@ -25,10 +25,8 @@ struct SecondaryEducationView: View {
     
     let adCoordinator = AdCoordinator()
     
+    @State private var viewModel = CalculateViewModel()
     
-    init() {
-        adCoordinator.loadAd()
-    }
     
     var body: some View {
         VStack {
@@ -113,7 +111,11 @@ struct SecondaryEducationView: View {
                         modelContext.insert(model)
                             
                         // Admob
-                        adCoordinator.presentAd()
+                        
+                        if viewModel.calculateCount % 3 == 0 {
+                            adCoordinator.presentAd()
+                        }
+                        viewModel.calculateCount += 1
                         
                     }
                     .disabled(formControl)

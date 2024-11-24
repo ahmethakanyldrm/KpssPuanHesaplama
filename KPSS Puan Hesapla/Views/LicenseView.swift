@@ -24,9 +24,9 @@ struct LicenseView: View {
     
     let adCoordinator = AdCoordinator()
     
-    init() {
-        adCoordinator.loadAd()
-    }
+    @State var viewModel = CalculateViewModel()
+    
+  
     
     var body: some View {
         VStack {
@@ -120,7 +120,13 @@ struct LicenseView: View {
                         modelContext.insert(model2023)
                         
                         // Admob
-                        adCoordinator.presentAd()
+                        
+                        
+                        if viewModel.calculateCount % 3 == 0 {
+                            adCoordinator.presentAd()
+                        }
+                        
+                        viewModel.calculateCount += 1
                         
                         
                         

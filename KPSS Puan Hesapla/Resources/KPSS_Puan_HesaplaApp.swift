@@ -26,6 +26,7 @@ struct KPSS_Puan_HesaplaApp: App {
         UITabBar.appearance().standardAppearance = appearanceTab
         
         // Admob SDK
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "09c783203a803f81dd3a540489c2a9a8"]
         GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
     

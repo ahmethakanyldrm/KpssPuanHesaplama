@@ -23,10 +23,9 @@ struct AssociateView: View {
     
     let adCoordinator = AdCoordinator()
     
-    init() {
-        adCoordinator.loadAd()
-    }
+    @State var viewModel = CalculateViewModel()
     
+   
     var body: some View {
         VStack {
             
@@ -111,7 +110,11 @@ struct AssociateView: View {
                         modelContext.insert(model)
                         
                         // Admob
-                        adCoordinator.presentAd()
+                        if viewModel.calculateCount % 3 == 0 {
+                            adCoordinator.presentAd()
+                        }
+                        viewModel.calculateCount += 1
+                       
                             
                         
                         

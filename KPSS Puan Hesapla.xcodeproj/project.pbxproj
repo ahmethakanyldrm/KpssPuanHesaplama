@@ -15,6 +15,9 @@
 		1C6285732CF35C8000436F95 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285722CF35C8000436F95 /* BannerView.swift */; };
 		1C6285772CF36A8B00436F95 /* AdCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285762CF36A8B00436F95 /* AdCoordinator.swift */; };
 		1C6285792CF36AA900436F95 /* AdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285782CF36AA900436F95 /* AdsManager.swift */; };
+		1C62857C2CF37AF800436F95 /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62857B2CF37AF700436F95 /* CalculateViewModel.swift */; };
+		1C62857F2CF3819A00436F95 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1C62857E2CF3819A00436F95 /* Lottie */; };
+		1C6285832CF382A500436F95 /* notfound.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C6285822CF382A500436F95 /* notfound.json */; };
 		1C8220092CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */; };
 		1C82200D2CEA51C300B6D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82200C2CEA51C300B6D873 /* Assets.xcassets */; };
 		1C8220102CEA51C300B6D873 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82200F2CEA51C300B6D873 /* Preview Assets.xcassets */; };
@@ -38,6 +41,8 @@
 		1C6285722CF35C8000436F95 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		1C6285762CF36A8B00436F95 /* AdCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCoordinator.swift; sourceTree = "<group>"; };
 		1C6285782CF36AA900436F95 /* AdsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsManager.swift; sourceTree = "<group>"; };
+		1C62857B2CF37AF700436F95 /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
+		1C6285822CF382A500436F95 /* notfound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = notfound.json; path = ../../../../Downloads/notfound.json; sourceTree = "<group>"; };
 		1C8220052CEA51C200B6D873 /* KPSS Puan Hesapla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KPSS Puan Hesapla.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPSS_Puan_HesaplaApp.swift; sourceTree = "<group>"; };
 		1C82200C2CEA51C300B6D873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C62856D2CF359D600436F95 /* GoogleMobileAds in Frameworks */,
+				1C62857F2CF3819A00436F95 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +99,14 @@
 			path = Admob;
 			sourceTree = "<group>";
 		};
+		1C62857A2CF37A5300436F95 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1C62857B2CF37AF700436F95 /* CalculateViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		1C821FFC2CEA51C200B6D873 = {
 			isa = PBXGroup;
 			children = (
@@ -113,11 +127,12 @@
 			isa = PBXGroup;
 			children = (
 				1C8220192CEA5C9A00B6D873 /* Resources */,
-				1C82200E2CEA51C300B6D873 /* Preview Content */,
 				1C62856E2CF35A3E00436F95 /* KPSS-Puan-Hesapla-Info.plist */,
+				1C82200E2CEA51C300B6D873 /* Preview Content */,
 				1C6285682CF3467700436F95 /* Model */,
-				1C6285652CF340C200436F95 /* Helpers */,
 				1C8220182CEA5C7800B6D873 /* Views */,
+				1C62857A2CF37A5300436F95 /* ViewModel */,
+				1C6285652CF340C200436F95 /* Helpers */,
 				1C82200C2CEA51C300B6D873 /* Assets.xcassets */,
 			);
 			path = "KPSS Puan Hesapla";
@@ -150,6 +165,7 @@
 		1C8220192CEA5C9A00B6D873 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C6285822CF382A500436F95 /* notfound.json */,
 				1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */,
 			);
 			path = Resources;
@@ -182,6 +198,7 @@
 			name = "KPSS Puan Hesapla";
 			packageProductDependencies = (
 				1C62856C2CF359D600436F95 /* GoogleMobileAds */,
+				1C62857E2CF3819A00436F95 /* Lottie */,
 			);
 			productName = "KPSS Puan Hesapla";
 			productReference = 1C8220052CEA51C200B6D873 /* KPSS Puan Hesapla.app */;
@@ -213,6 +230,7 @@
 			mainGroup = 1C821FFC2CEA51C200B6D873;
 			packageReferences = (
 				1C62856B2CF359D600436F95 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				1C62857D2CF3819900436F95 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 1C8220062CEA51C200B6D873 /* Products */;
 			projectDirPath = "";
@@ -230,6 +248,7 @@
 			files = (
 				1C8220102CEA51C300B6D873 /* Preview Assets.xcassets in Resources */,
 				1C82200D2CEA51C300B6D873 /* Assets.xcassets in Resources */,
+				1C6285832CF382A500436F95 /* notfound.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +272,7 @@
 				1C8220252CEA71F700B6D873 /* LicenseView.swift in Sources */,
 				1C82201D2CEA5CED00B6D873 /* PastCalculationsView.swift in Sources */,
 				1C82201B2CEA5CDB00B6D873 /* MainView.swift in Sources */,
+				1C62857C2CF37AF800436F95 /* CalculateViewModel.swift in Sources */,
 				1C82202C2CEA7ADA00B6D873 /* CalculateButton.swift in Sources */,
 				1C6285772CF36A8B00436F95 /* AdCoordinator.swift in Sources */,
 				1C8220092CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift in Sources */,
@@ -478,6 +498,14 @@
 				minimumVersion = 11.12.0;
 			};
 		};
+		1C62857D2CF3819900436F95 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -485,6 +513,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1C62856B2CF359D600436F95 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
+		};
+		1C62857E2CF3819A00436F95 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C62857D2CF3819900436F95 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
