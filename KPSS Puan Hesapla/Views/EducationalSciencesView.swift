@@ -23,20 +23,34 @@ struct EducationalSciencesView: View {
     @State private var resultEB2022: Double = 0
     @State private var resultEB2023: Double = 0
     
+    @State private var isShowingSheet = false
+
+    
     var body: some View {
         VStack {
             
             Form {
                 Section {
-                    Stepper("Doğru Sayısı: \(gkTrueCount, specifier: "%.0f")", value: $gkTrueCount, in: 1...60)
+                    Stepper(value: $gkTrueCount, in: 1...60) {
+                        Label(
+                            title: { Text("Doğru Sayısı: \(gkTrueCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "checkmark.circle") }
+)
+                    }
                         .sensoryFeedback(.selection, trigger: gkTrueCount)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gkFalseCount, specifier: "%.0f")", value: $gkFalseCount, in: 0...60)
+                    Stepper(value: $gkFalseCount, in: 0...60) {
+                        Label(
+                            title: { Text("Yanlış Sayısı: \(gkFalseCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "xmark.circle") }
+                        )
+                    }
                         .sensoryFeedback(.selection, trigger: gkFalseCount)
                         .bold()
                     
                 } header: {
                     Text("Genel Kültür")
+                        .foregroundStyle(.main)
                         .textCase(.none)
                 }footer: {
                     if(gkTrueCount + gkFalseCount > 60) {
@@ -46,15 +60,28 @@ struct EducationalSciencesView: View {
                 }
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gyTrueCount, specifier: "%.0f")", value: $gyTrueCount, in: 1...60)
+                    Stepper(value: $gyTrueCount, in: 1...60) {
+                        Label(
+                            title: { Text("Doğru Sayısı: \(gyTrueCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "checkmark.circle") }
+                        )
+                    }
                         .sensoryFeedback(.selection, trigger: gyTrueCount)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gyFalseCount, specifier: "%.0f")", value: $gyFalseCount, in: 0...60)
+                    
+                    Stepper(value: $gyFalseCount, in: 1...60) {
+                        Label(
+                            title: { Text("Yanlış Sayısı: \(gyFalseCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "xmark.circle") }
+                        )
+                    }
+                    
                         .sensoryFeedback(.selection, trigger: gyFalseCount)
                         .bold()
                     
                 } header: {
                     Text("Genel Yetenek")
+                        .foregroundStyle(.main)
                         .textCase(.none)
                 }footer: {
                     if(gyTrueCount + gyFalseCount > 60) {
@@ -64,15 +91,54 @@ struct EducationalSciencesView: View {
                 }
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(ebTrueCount, specifier: "%.0f")", value: $ebTrueCount, in: 1...80)
+                    Stepper(value: $ebTrueCount, in: 1...80) {
+                        Label(
+                            title: { Text("Doğru Sayısı: \(ebTrueCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "checkmark.circle") }
+                        )
+                    }
+                    
                         .sensoryFeedback(.selection, trigger: ebTrueCount)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(ebFalseCount, specifier: "%.0f")", value: $ebFalseCount, in: 0...80)
+                    
+                    Stepper(value: $ebFalseCount, in: 1...80) {
+                        Label(
+                            title: { Text("Yanlış Sayısı: \(ebFalseCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "xmark.circle") }
+                        )
+                    }
+                    
+                   
                         .sensoryFeedback(.selection, trigger: ebFalseCount)
                         .bold()
                     
+                    
+                    CalculateButton(title: "Hesapla") {
+                
+                        let gkNet = gkTrueCount - (gkFalseCount / 4)
+                        let gyNet = gyTrueCount - (gyFalseCount / 4)
+                        let ebNet = ebTrueCount - (ebFalseCount / 4)
+      
+                            
+                            resultEB2022 = 36.812 + gyNet * 0.3985 + gkNet * 0.3512 + ebNet * 0.34714
+                            resultEB2023 = 40.405 + gyNet * 0.3493 + gkNet * 0.3672 + ebNet * 0.37145
+                            
+                            result2022 = 48.616 + gyNet * 0.4756 + gkNet * 0.4192
+                            result2023 = 51.209 + gyNet * 0.537 + gkNet * 0.418
+                        
+                        isShowingSheet.toggle()
+                        
+                    }
+                    .disabled(formControl)
+                    .sensoryFeedback(.success, trigger: result2023)
+                    .sheet(isPresented: $isShowingSheet) {
+                        ResultView(result2022: result2022, resultEB2022: resultEB2022, resultOABT2022: nil, result2023: result2023, resultEB2023: resultEB2023, resultOABT2023: nil)
+                    }
+                    
+                    
                 } header: {
                     Text("Eğitim Bilimleri")
+                        .foregroundStyle(.main)
                         .textCase(.none)
                 }footer: {
                     if(ebTrueCount + ebFalseCount > 68) {
@@ -81,58 +147,10 @@ struct EducationalSciencesView: View {
                     }
                 }
                 
-                Section {
-                    VStack (alignment: .leading){
-                        Text("2023 P3(Memur) Puanı: \(result2023, specifier: "%.3f")")
-                            .bold()
-                        
-                        Text("2023 P10(Öğretmen) Puanı: \(resultEB2023, specifier: "%.3f")")
-                            .bold()
-                    }
-                    
-                    VStack (alignment: .leading) {
-                        Text("2022 P3(Memur) Puanı: \(result2022, specifier: "%.3f")")
-                            .bold()
-                        
-                        Text("2022 P10(Öğretmen) Puanı: \(resultEB2022, specifier: "%.3f")")
-                            .bold()
-                    }
-                    
-                   
-                    
-                    CalculateButton(title: "Hesapla") {
-                       
-                        
-                        let gkNet = gkTrueCount - (gkFalseCount / 4)
-                        let gyNet = gyTrueCount - (gyFalseCount / 4)
-                        let ebNet = ebTrueCount - (ebFalseCount / 4)
-                        
-                        withAnimation{
-                            
-                            // genel kültür, genel yetenek, eğitim bilimleri netlerimizi hesaplıyoruz
-                            
-                            resultEB2022 = 36.812 + gyNet * 0.3985 + gkNet * 0.3512 + ebNet * 0.34714
-                            resultEB2023 = 40.405 + gyNet * 0.3493 + gkNet * 0.3672 + ebNet * 0.37145
-                            
-                            result2022 = 48.616 + gyNet * 0.4756 + gkNet * 0.4192
-                            result2023 = 51.209 + gyNet * 0.537 + gkNet * 0.418
-                            
-                        }
-                            
-                        
-                        
-                    }
-                    .disabled(formControl)
-                    .sensoryFeedback(.success, trigger: result2023)
-                    
-                    
-                } header: {
-                    Text("Sonuç")
-                        .textCase(.none)
-                }
             }
         }
         .navigationTitle("Eğitim Bilimleri")
+        .toolbar(.hidden, for: .tabBar)
     }
     
     
