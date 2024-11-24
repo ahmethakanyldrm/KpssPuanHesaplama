@@ -18,7 +18,7 @@ struct RootView: View {
                         .environment(\.symbolVariants, selectionItem == 0 ? .fill : .none)
                 }.tag(0)
             
-            ResultView()
+            PastCalculationsView()
                 .tabItem {
                     Label("Sonuçlar", systemImage: "arrow.counterclockwise.circle")
                         .environment(\.symbolVariants, selectionItem == 1 ? .fill : .none)
