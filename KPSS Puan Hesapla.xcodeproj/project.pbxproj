@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C6285642CF28D9900436F95 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285632CF28D9900436F95 /* ResultView.swift */; };
 		1C8220092CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */; };
 		1C82200D2CEA51C300B6D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82200C2CEA51C300B6D873 /* Assets.xcassets */; };
 		1C8220102CEA51C300B6D873 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82200F2CEA51C300B6D873 /* Preview Assets.xcassets */; };
 		1C82201B2CEA5CDB00B6D873 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82201A2CEA5CDB00B6D873 /* MainView.swift */; };
-		1C82201D2CEA5CED00B6D873 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82201C2CEA5CED00B6D873 /* ResultView.swift */; };
+		1C82201D2CEA5CED00B6D873 /* PastCalculationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82201C2CEA5CED00B6D873 /* PastCalculationsView.swift */; };
 		1C82201F2CEA5D0100B6D873 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82201E2CEA5D0100B6D873 /* RootView.swift */; };
 		1C8220212CEA70AF00B6D873 /* SecondaryEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8220202CEA70AF00B6D873 /* SecondaryEducationView.swift */; };
 		1C8220232CEA70E200B6D873 /* AssociateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8220222CEA70E200B6D873 /* AssociateView.swift */; };
@@ -22,12 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C6285632CF28D9900436F95 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		1C8220052CEA51C200B6D873 /* KPSS Puan Hesapla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KPSS Puan Hesapla.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPSS_Puan_HesaplaApp.swift; sourceTree = "<group>"; };
 		1C82200C2CEA51C300B6D873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C82200F2CEA51C300B6D873 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C82201A2CEA5CDB00B6D873 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		1C82201C2CEA5CED00B6D873 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		1C82201C2CEA5CED00B6D873 /* PastCalculationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastCalculationsView.swift; sourceTree = "<group>"; };
 		1C82201E2CEA5D0100B6D873 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1C8220202CEA70AF00B6D873 /* SecondaryEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryEducationView.swift; sourceTree = "<group>"; };
 		1C8220222CEA70E200B6D873 /* AssociateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociateView.swift; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 				1C82202A2CEA7AB000B6D873 /* Core */,
 				1C82201E2CEA5D0100B6D873 /* RootView.swift */,
 				1C82201A2CEA5CDB00B6D873 /* MainView.swift */,
-				1C82201C2CEA5CED00B6D873 /* ResultView.swift */,
+				1C82201C2CEA5CED00B6D873 /* PastCalculationsView.swift */,
 				1C8220202CEA70AF00B6D873 /* SecondaryEducationView.swift */,
 				1C8220222CEA70E200B6D873 /* AssociateView.swift */,
 				1C8220242CEA71F700B6D873 /* LicenseView.swift */,
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1C82202B2CEA7ADA00B6D873 /* CalculateButton.swift */,
+				1C6285632CF28D9900436F95 /* ResultView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -187,11 +190,12 @@
 			files = (
 				1C82201F2CEA5D0100B6D873 /* RootView.swift in Sources */,
 				1C8220212CEA70AF00B6D873 /* SecondaryEducationView.swift in Sources */,
+				1C6285642CF28D9900436F95 /* ResultView.swift in Sources */,
 				1C8220272CEA722000B6D873 /* OABTView.swift in Sources */,
 				1C8220292CEA737A00B6D873 /* EducationalSciencesView.swift in Sources */,
 				1C8220232CEA70E200B6D873 /* AssociateView.swift in Sources */,
 				1C8220252CEA71F700B6D873 /* LicenseView.swift in Sources */,
-				1C82201D2CEA5CED00B6D873 /* ResultView.swift in Sources */,
+				1C82201D2CEA5CED00B6D873 /* PastCalculationsView.swift in Sources */,
 				1C82201B2CEA5CDB00B6D873 /* MainView.swift in Sources */,
 				1C82202C2CEA7ADA00B6D873 /* CalculateButton.swift in Sources */,
 				1C8220092CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift in Sources */,

@@ -22,15 +22,26 @@ struct SecondaryEducationView: View {
             
             Form {
                 Section {
-                    Stepper("Doğru Sayısı: \(gkTrueCount, specifier: "%.0f")", value: $gkTrueCount, in: 1...60)
+                    Stepper(value: $gkTrueCount, in: 1...60) {
+                        Label(
+                            title: { Text("Doğru Sayısı: \(gkTrueCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "checkmark.circle") }
+)
+                    }
                         .sensoryFeedback(.selection, trigger: gkTrueCount)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gkFalseCount, specifier: "%.0f")", value: $gkFalseCount, in: 0...60)
+                    Stepper(value: $gkFalseCount, in: 0...60) {
+                        Label(
+                            title: { Text("Yanlış Sayısı: \(gkFalseCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "xmark.circle") }
+                        )
+                    }
                         .sensoryFeedback(.selection, trigger: gkFalseCount)
                         .bold()
                     
                 } header: {
                     Text("Genel Kültür")
+                        .foregroundStyle(.main)
                         .textCase(.none)
                 }footer: {
                     if(gkTrueCount + gkFalseCount > 60) {
@@ -40,15 +51,28 @@ struct SecondaryEducationView: View {
                 }
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gyTrueCount, specifier: "%.0f")", value: $gyTrueCount, in: 1...60)
+                    Stepper(value: $gyTrueCount, in: 1...60) {
+                        Label(
+                            title: { Text("Doğru Sayısı: \(gyTrueCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "checkmark.circle") }
+                        )
+                    }
                         .sensoryFeedback(.selection, trigger: gyTrueCount)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gyFalseCount, specifier: "%.0f")", value: $gyFalseCount, in: 0...60)
+                    
+                    Stepper(value: $gyFalseCount, in: 1...60) {
+                        Label(
+                            title: { Text("Yanlış Sayısı: \(gyFalseCount, specifier: "%.0f")") },
+                            icon: { Image(systemName: "xmark.circle") }
+                        )
+                    }
+                    
                         .sensoryFeedback(.selection, trigger: gyFalseCount)
                         .bold()
                     
                 } header: {
                     Text("Genel Yetenek")
+                        .foregroundStyle(.main)
                         .textCase(.none)
                 }footer: {
                     if(gyTrueCount + gyFalseCount > 60) {
@@ -81,11 +105,13 @@ struct SecondaryEducationView: View {
                     
                 } header: {
                     Text("Sonuç")
+                        .foregroundStyle(.main)
                         .textCase(.none)
                 }
             }
         }
         .navigationTitle("Ortaöğretim")
+        .toolbar(.hidden, for: .tabBar)
     }
     
     

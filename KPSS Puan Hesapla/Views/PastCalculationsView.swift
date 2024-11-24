@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ResultView: View {
+struct PastCalculationsView: View {
     var body: some View {
         NavigationStack {
             VStack {
@@ -19,5 +19,5 @@ struct ResultView: View {
 }
 
 #Preview {
-    ResultView()
+    PastCalculationsView()
 }
