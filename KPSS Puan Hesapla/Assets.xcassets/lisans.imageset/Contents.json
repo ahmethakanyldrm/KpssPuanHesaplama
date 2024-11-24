@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "lisans.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

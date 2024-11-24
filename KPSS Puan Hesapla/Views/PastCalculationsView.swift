@@ -89,23 +89,25 @@ struct PastCalculationsView: View {
                     }
                 }
                 .overlay {
-                    if results.isEmpty {
-                       
-                        ContentUnavailableView {
-                            Text("Sonuç Bulunamadı")
-                                .foregroundStyle(.main)
-                            
-                        } description: {
-                            VStack {
-                                Text("Henüz sonuç bulanamadı. Puan hesaplamaya başlamak için lütfen Ana sayfaya gidin ...")
-                                LottieView(animation: .named("notfound"))
-                                    .looping()
-                                    .frame(width: 250, height: 250)
-                                    .shadow(radius: 10)
-                            }
-                        } actions: {
-                            Button("KPSS Puan Hesaplaması Yap") {
-                                selectionTabItem = 0
+                    GeometryReader { geo in
+                        if results.isEmpty {
+                           
+                            ContentUnavailableView {
+                                Text("Sonuç Bulunamadı")
+                                    .foregroundStyle(.main)
+                                
+                            } description: {
+                                VStack {
+                                    Text("Henüz sonuç bulanamadı. Puan hesaplamaya başlamak için lütfen Ana sayfaya gidin ...")
+                                    LottieView(animation: .named("notfound"))
+                                        .looping()
+                                        .frame(height: geo.size.height * 0.5)
+                                        .shadow(radius: 10)
+                                }
+                            } actions: {
+                                Button("KPSS Puan Hesaplaması Yap") {
+                                    selectionTabItem = 0
+                                }
                             }
                         }
                     }

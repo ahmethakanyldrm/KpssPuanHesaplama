@@ -1,5 +1,5 @@
 {
-  "originHash" : "a3a97d8d6b9d3403e9902604ec95a81e72742db986d8b384764f8dca4294524f",
+  "originHash" : "f92c333a697d55c6f0a177d03bd3ef479940d6931f5796f89bead2ca5d70ff69",
   "pins" : [
     {
       "identity" : "lottie-spm",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "708a282840c2171ee63bd93b87afa49fe507d70e",
         "version" : "2.7.0"
+      }
+    },
+    {
+      "identity" : "uionboarding",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lascic/UIOnboarding.git",
+      "state" : {
+        "revision" : "efd1e944c399de24c10d9f4947301e1c105dbb9b",
+        "version" : "2.0.3"
       }
     }
   ],
