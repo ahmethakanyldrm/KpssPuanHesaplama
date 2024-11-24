@@ -23,7 +23,7 @@ struct CalculateButton: View {
             
         })
         .buttonStyle(.borderedProminent)
-        .tint(.main)
+        .tint(.blue)
     }
 }
 
