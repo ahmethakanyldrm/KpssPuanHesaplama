@@ -27,6 +27,12 @@ struct EducationalSciencesView: View {
     @State private var isShowingSheet = false
     
     @Environment(\.modelContext) private var modelContext
+    
+    let adCoordinator = AdCoordinator()
+    
+    init() {
+        adCoordinator.loadAd()
+    }
 
     
     var body: some View {
@@ -144,6 +150,9 @@ struct EducationalSciencesView: View {
                         
                         modelContext.insert(model2022EB)
                         modelContext.insert(model2023EB)
+                        
+                        // Admob
+                        adCoordinator.presentAd()
                         
                     }
                     .disabled(formControl)

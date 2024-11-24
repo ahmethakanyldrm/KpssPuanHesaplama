@@ -22,6 +22,12 @@ struct LicenseView: View {
     
     @Environment(\.modelContext) private var modelContext
     
+    let adCoordinator = AdCoordinator()
+    
+    init() {
+        adCoordinator.loadAd()
+    }
+    
     var body: some View {
         VStack {
             
@@ -112,6 +118,9 @@ struct LicenseView: View {
                         
                         modelContext.insert(model2022)
                         modelContext.insert(model2023)
+                        
+                        // Admob
+                        adCoordinator.presentAd()
                         
                         
                         

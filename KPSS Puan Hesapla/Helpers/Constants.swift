@@ -46,5 +46,10 @@ final class Constants {
     static let oabt2022GKCoefficient = 0.1515
     static let oabt2022EBCoefficient = 0.1498
     
+    // Admob
+    static let bannerUnitID = "ca-app-pub-5367651791530121/2679880135"
+    static let interstitialUnitID  = "ca-app-pub-5367651791530121/1850185638"
     
+    static let bannerUnitIDTest    = "ca-app-pub-3940256099942544/2435281174"
+    static let interstitialUnitIDTest = "ca-app-pub-3940256099942544/4411468910"
 }

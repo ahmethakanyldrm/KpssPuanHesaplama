@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppTrackingTransparency
 
 struct RootView: View {
     @State private var selectionItem = 0
@@ -24,8 +25,10 @@ struct RootView: View {
                         .environment(\.symbolVariants, selectionItem == 1 ? .fill : .none)
                 } .tag(1)
         }
+        
         .tint(.purple)
     }
+        
 }
 
 #Preview {

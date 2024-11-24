@@ -21,6 +21,12 @@ struct AssociateView: View {
     
     @Environment(\.modelContext) private var modelContext
     
+    let adCoordinator = AdCoordinator()
+    
+    init() {
+        adCoordinator.loadAd()
+    }
+    
     var body: some View {
         VStack {
             
@@ -103,6 +109,9 @@ struct AssociateView: View {
                         // SwiftData insert
                         let model = Result(examName: "Önlisans KPSS", gyNet: gyNet, gkNet: gkNet, result: result)
                         modelContext.insert(model)
+                        
+                        // Admob
+                        adCoordinator.presentAd()
                             
                         
                         

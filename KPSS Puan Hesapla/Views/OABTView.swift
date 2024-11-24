@@ -37,6 +37,10 @@ struct OABTView: View {
     
     @Environment(\.modelContext) private var modelContext
     
+    let adCoordinator = AdCoordinator()
+    
+    
+    
     let options = [
         (0.4334,43.805, "Beden Eğitimi"),
         (0.3666,41.071, "Biyoloji"),
@@ -57,6 +61,10 @@ struct OABTView: View {
         (0.3521,41.418, "Tarih"),
         (0.4565,34.329, "Türkçe")
     ]
+    
+    init() {
+        adCoordinator.loadAd()
+    }
     
     var body: some View {
         VStack {
@@ -213,6 +221,7 @@ struct OABTView: View {
                         let model2022oabt = Result(examName: "2022 ÖABT", gyNet: gyNet, gkNet: gkNet, oabtNet: oabtNet,result: resultOABT2022)
                         modelContext.insert(model2022oabt)
                         
+                        adCoordinator.presentAd()
                         
                         
                     }

@@ -10,6 +10,11 @@
 		1C6285642CF28D9900436F95 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285632CF28D9900436F95 /* ResultView.swift */; };
 		1C6285672CF340D500436F95 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285662CF340D500436F95 /* Constants.swift */; };
 		1C62856A2CF3468600436F95 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285692CF3468600436F95 /* Result.swift */; };
+		1C62856D2CF359D600436F95 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 1C62856C2CF359D600436F95 /* GoogleMobileAds */; };
+		1C6285712CF35B7200436F95 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285702CF35B7200436F95 /* BannerViewController.swift */; };
+		1C6285732CF35C8000436F95 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285722CF35C8000436F95 /* BannerView.swift */; };
+		1C6285772CF36A8B00436F95 /* AdCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285762CF36A8B00436F95 /* AdCoordinator.swift */; };
+		1C6285792CF36AA900436F95 /* AdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285782CF36AA900436F95 /* AdsManager.swift */; };
 		1C8220092CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */; };
 		1C82200D2CEA51C300B6D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82200C2CEA51C300B6D873 /* Assets.xcassets */; };
 		1C8220102CEA51C300B6D873 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C82200F2CEA51C300B6D873 /* Preview Assets.xcassets */; };
@@ -28,6 +33,11 @@
 		1C6285632CF28D9900436F95 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		1C6285662CF340D500436F95 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1C6285692CF3468600436F95 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		1C62856E2CF35A3E00436F95 /* KPSS-Puan-Hesapla-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "KPSS-Puan-Hesapla-Info.plist"; sourceTree = SOURCE_ROOT; };
+		1C6285702CF35B7200436F95 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		1C6285722CF35C8000436F95 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		1C6285762CF36A8B00436F95 /* AdCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCoordinator.swift; sourceTree = "<group>"; };
+		1C6285782CF36AA900436F95 /* AdsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsManager.swift; sourceTree = "<group>"; };
 		1C8220052CEA51C200B6D873 /* KPSS Puan Hesapla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KPSS Puan Hesapla.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8220082CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPSS_Puan_HesaplaApp.swift; sourceTree = "<group>"; };
 		1C82200C2CEA51C300B6D873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C62856D2CF359D600436F95 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +68,7 @@
 		1C6285652CF340C200436F95 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1C62856F2CF35B5C00436F95 /* Admob */,
 				1C6285662CF340D500436F95 /* Constants.swift */,
 			);
 			path = Helpers;
@@ -68,6 +80,17 @@
 				1C6285692CF3468600436F95 /* Result.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1C62856F2CF35B5C00436F95 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				1C6285702CF35B7200436F95 /* BannerViewController.swift */,
+				1C6285722CF35C8000436F95 /* BannerView.swift */,
+				1C6285762CF36A8B00436F95 /* AdCoordinator.swift */,
+				1C6285782CF36AA900436F95 /* AdsManager.swift */,
+			);
+			path = Admob;
 			sourceTree = "<group>";
 		};
 		1C821FFC2CEA51C200B6D873 = {
@@ -89,10 +112,11 @@
 		1C8220072CEA51C200B6D873 /* KPSS Puan Hesapla */ = {
 			isa = PBXGroup;
 			children = (
+				1C8220192CEA5C9A00B6D873 /* Resources */,
+				1C82200E2CEA51C300B6D873 /* Preview Content */,
+				1C62856E2CF35A3E00436F95 /* KPSS-Puan-Hesapla-Info.plist */,
 				1C6285682CF3467700436F95 /* Model */,
 				1C6285652CF340C200436F95 /* Helpers */,
-				1C82200E2CEA51C300B6D873 /* Preview Content */,
-				1C8220192CEA5C9A00B6D873 /* Resources */,
 				1C8220182CEA5C7800B6D873 /* Views */,
 				1C82200C2CEA51C300B6D873 /* Assets.xcassets */,
 			);
@@ -156,6 +180,9 @@
 			dependencies = (
 			);
 			name = "KPSS Puan Hesapla";
+			packageProductDependencies = (
+				1C62856C2CF359D600436F95 /* GoogleMobileAds */,
+			);
 			productName = "KPSS Puan Hesapla";
 			productReference = 1C8220052CEA51C200B6D873 /* KPSS Puan Hesapla.app */;
 			productType = "com.apple.product-type.application";
@@ -184,6 +211,9 @@
 				tr,
 			);
 			mainGroup = 1C821FFC2CEA51C200B6D873;
+			packageReferences = (
+				1C62856B2CF359D600436F95 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 1C8220062CEA51C200B6D873 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -214,13 +244,17 @@
 				1C62856A2CF3468600436F95 /* Result.swift in Sources */,
 				1C8220212CEA70AF00B6D873 /* SecondaryEducationView.swift in Sources */,
 				1C6285642CF28D9900436F95 /* ResultView.swift in Sources */,
+				1C6285792CF36AA900436F95 /* AdsManager.swift in Sources */,
 				1C8220272CEA722000B6D873 /* OABTView.swift in Sources */,
+				1C6285732CF35C8000436F95 /* BannerView.swift in Sources */,
 				1C8220292CEA737A00B6D873 /* EducationalSciencesView.swift in Sources */,
+				1C6285712CF35B7200436F95 /* BannerViewController.swift in Sources */,
 				1C8220232CEA70E200B6D873 /* AssociateView.swift in Sources */,
 				1C8220252CEA71F700B6D873 /* LicenseView.swift in Sources */,
 				1C82201D2CEA5CED00B6D873 /* PastCalculationsView.swift in Sources */,
 				1C82201B2CEA5CDB00B6D873 /* MainView.swift in Sources */,
 				1C82202C2CEA7ADA00B6D873 /* CalculateButton.swift in Sources */,
+				1C6285772CF36A8B00436F95 /* AdCoordinator.swift in Sources */,
 				1C8220092CEA51C200B6D873 /* KPSS_Puan_HesaplaApp.swift in Sources */,
 				1C6285672CF340D500436F95 /* Constants.swift in Sources */,
 			);
@@ -359,7 +393,9 @@
 				DEVELOPMENT_TEAM = 54M6VWH583;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "KPSS Puan Hesapla";
+				INFOPLIST_FILE = "KPSS-Puan-Hesapla-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PuanMatik;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Reklamları kişiselleştirmek isterseniz izin vermelisiniz";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -389,7 +425,9 @@
 				DEVELOPMENT_TEAM = 54M6VWH583;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "KPSS Puan Hesapla";
+				INFOPLIST_FILE = "KPSS-Puan-Hesapla-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PuanMatik;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Reklamları kişiselleştirmek isterseniz izin vermelisiniz";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -430,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C62856B2CF359D600436F95 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C62856C2CF359D600436F95 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C62856B2CF359D600436F95 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C821FFD2CEA51C200B6D873 /* Project object */;
 }

@@ -23,6 +23,13 @@ struct SecondaryEducationView: View {
     
     @State private var result: Double = 0
     
+    let adCoordinator = AdCoordinator()
+    
+    
+    init() {
+        adCoordinator.loadAd()
+    }
+    
     var body: some View {
         VStack {
             
@@ -105,7 +112,8 @@ struct SecondaryEducationView: View {
                         let model = Result(examName: "Ortaöğretim KPSS", gyNet: gyNet, gkNet: gkNet, result: result)
                         modelContext.insert(model)
                             
-                        
+                        // Admob
+                        adCoordinator.presentAd()
                         
                     }
                     .disabled(formControl)
